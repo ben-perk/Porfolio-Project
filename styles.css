@@ -1,0 +1,69 @@
+html, body {
+    background-color: white;
+    color: black;
+}
+
+h1, h2, h3, h4, h5, h6{
+    text-align: center;
+    align-items: center;
+    color:blue
+}
+
+#html, #css, #bs, #photoshop{
+    align-items: center;
+    text-align: center;
+
+}
+
+#hero-section{ 
+    /* position: relative; */
+    background-image: url("images/heroimg.png");
+    /* background-image: linear-gradient(rgba(15, 41, 47, 0.5), rgba(15, 41, 47, 0.5)), url(img/bulb\ window.png); */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* position: relative; */
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin: 0;
+    /* margin-top: 75px; */
+    padding: 0;
+    height: 75vh;
+    color: white;
+}
+footer{
+    text-align: center;
+    align-items: center;
+    background-color: white;
+    color: blue;
+}
+
+p{
+    text-align: center;
+    align-items: center;
+}
+
+/* min width px max width % */
+#hero-section img {
+    min-width: 150px;
+    max-width: 15%;
+    border: 10px solid transparent;
+    border-radius: 50%;
+    border-color: rgba(0, 0, 0, .2);
+  }
+
+#contact-section{
+    text-align: center;
+    align-items: space-between;
+
+}
+img{
+    max-width: 25%;
+    height: auto;
+    width: auto;
+}
