@@ -1,0 +1,2 @@
+# Handle fragment identifiers
+/*#* /:splat 301!
