@@ -1,0 +1,9 @@
+{
+  "name": "portfolio-project",
+  "version": "1.0.0",
+  "description": "Benjamin Perkton's Portfolio",
+  "scripts": {
+    "build": "echo 'No build step required'"
+  },
+  "dependencies": {}
+}
