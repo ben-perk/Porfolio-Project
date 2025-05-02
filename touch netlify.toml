@@ -6,3 +6,7 @@
 
 [build.processing]
   skip_processing = true
+
+[build]
+  publish = "."
+  command = ""  # No build command needed for static HTML
