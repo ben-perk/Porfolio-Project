@@ -1,0 +1,2 @@
+# Redirect any requests to invalid filenames with # to the correct page
+/index.html#* /index.html 301
