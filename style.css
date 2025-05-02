@@ -1,4 +1,4 @@
-/* body {
+/* /* body {
     font-family: Arial, sans-serif;
    
 }
@@ -31,7 +31,7 @@ height: 25%;
 object-fit: cover;
 display: block;
 } */
-
+/* 
 section {
     margin: 20px;
 }
@@ -40,13 +40,13 @@ section {
     max-width: 50%;
     height: 25%;
     width: 25%; /* ie8 */
-  border-top-left-radius: 50%;
+  /* border-top-left-radius: 50%;
   border-bottom-right-radius: 50%;
   border: 4px groove darkblue;
-    
+     */
 }
 
-.projects {
+/* .projects {
     width: 200px; 
     height: 200px;y
     border: 1px solid #ccc;
@@ -54,7 +54,7 @@ section {
     display: inline-block; 
     text-align: center;
     line-height: 200px; 
-}
+} */ */
 
 /* h2 {
     color: blue;
@@ -113,14 +113,14 @@ h1 {
     align-items: center;
     margin: 20px auto;
 } */
-.slider-container {
+/* .slider-container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 20px auto;
-}
+} */
 
-#image {
+/* #image {
   max-width: 100%;
   height: auto;
 }
@@ -128,7 +128,7 @@ h1 {
     max-width: 100%;
     height: auto;
 }
-  
+   */
 }
 /* .edu-container {
     display: flex;
@@ -183,18 +183,7 @@ nav a:visited
   text-decoration: none;
   color: blue;
 }
-nav a:hover{ 
-  text-decoration: none;
-  color: darkblue;
-}
-nav a:active{
-  text-decoration: none;
-  color: darkblue;
-}
-nav a:focus{
-  text-decoration: none;
-  color: darkblue;
-}
+
 p{
   font-family: Arial, Helvetica, sans-serif;
   font-size: large;
@@ -337,9 +326,9 @@ p{
   font-family: Arial, Helvetica, sans-serif;
   font-size: large;
 } */
-.slider {
-  display: flex;
-  flex-direction: row;
+/* .slider {
+  display: flex; */
+  /* flex-direction: row;
   gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
@@ -400,9 +389,9 @@ img.displaySlide{
 @keyframes fade{
   from{opacity: 0.4;}
   to{opacity: 1;}
-}
+} */
 
-#user-info {
+/* #user-info {
   margin-bottom: 10px;
   margin-left: 30%;
   margin-right: 30%;
@@ -520,7 +509,7 @@ main #gallery {
 }
 
 /* Mobile responsive styles */
-@media screen and (max-width: 576px) {
+/* @media screen and (max-width: 576px) {
   form {
       /* padding: 15px; */
       width: 100%;
@@ -553,4 +542,4 @@ main #gallery {
       padding: 12px;
       margin-top: 10px;
   }
-}
+} */ */ */

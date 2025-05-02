@@ -1,95 +1,438 @@
+/* General styles for the entire site */
 html, body {
-    background-color: white;
-    color: black;
+  background-color: white;
+  color: black;
+}
+
+body{
+ padding-top: 56px; 
 }
 
 main{
-    margin: 2rem;
+  margin: 2rem;
 }
 
-h1, h2, h3, h4, h5, h6{
-    text-align: center;
-    align-items: center;
-    color:blue
+/* Navigation styles */
+nav a {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    border-radius: 50%;
+  }
+
+nav a:hover{ 
+  text-decoration: underline;
+  color: blue;
+transform: translateY(-5px) scale(1.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#html, #css, #bs, #photoshop, #js, #premiere {
-    align-items: center;
-    text-align: center;
-
+.active{
+  text-decoration: underline;
+  color: darkblue;
 }
 
-#js img {
-    width: 128px; 
-    height: auto;
-  }
+nav a:focus{
+  text-decoration: none;
+  color: darkblue;
+}
 
-
-  #skills-section .col:hover {
-    transform: translateY(-10px);
-    scale: 1.05;
-    box-shadow: 0 10px 20px blue
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  #conttact-section a{
-    text-decoration: none;
-  }
-
+/* Hero section styles */
 #hero-section{ 
-    /* position: relative; */
-    background-image: url("images/heroimg.png");
-    /* background-image: linear-gradient(rgba(15, 41, 47, 0.5), rgba(15, 41, 47, 0.5)), url(img/bulb\ window.png); */
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    /* position: relative; */
-    /* text-align: center; */
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-    margin: 0;
-    /* margin-top: 75px; */
-    padding: 0;
-    height: 75vh;
-    color: white;
+  /* position: relative; */
+  background-image: url("images/heroimg.png");
+  /* background-image: linear-gradient(rgba(15, 41, 47, 0.5), rgba(15, 41, 47, 0.5)), url(img/bulb\ window.png); */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* position: relative; */
+  /* text-align: center; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  margin: 0;
+  /* margin-top: 75px; */
+  padding: 0;
+  height: 75vh;
+  color: white;
 }
 
 #hero-section h1{
-    font-size: 50px;
-    color:white;
-}
-footer{
-    text-align: center;
-    align-items: center;
-    background-color: white;
-    color: blue;
-}
-
-p{
-    text-align: center;
-    align-items: center;
+  font-size: 50px;
+  color:white;
 }
 
 /* min width px max width % */
 #hero-section img {
-    min-width: 150px;
-    max-width: 15%;
-    border: 10px solid transparent;
-    border-radius: 50%;
-    border-color: rgba(0, 0, 0, .2);
+  min-width: 150px;
+  max-width: 15%;
+  border: 10px solid transparent;
+  border-radius: 50%;
+  border-color: rgba(0, 0, 0, .2);
+}
+
+/* Section styles */
+section {
+  margin: 20px;
+}
+
+#main-section{
+  padding-top: 2rem;
+}
+
+#mission-section{
+  padding-top: 2rem;
+}
+
+#about-section{
+  padding-top: 2rem;
+}
+
+/* Skills section styles */
+#skills-section{
+  padding-top: 2rem;
+}
+
+
+
+#html, #css, #bs, #photoshop, #js, #premiere {
+  align-items: center;
+  text-align: center;
+}
+
+#js img {
+  width: 128px; 
+  height: auto;
+}
+
+#skills-section .col {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, scale 0.3s ease;
+    cursor: pointer;
   }
 
-#contact-section{
-    text-align: center;
-    align-items: space-between;
+#skills-section .col:hover {
+    translateY(-10px);
+    scale: 1.05;
+    box-shadow: 0 10px 20px rgba(0, 0, 255, 0.5); /* Blue with transparency */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, scale 0.3s ease;
+  }
 
+  #html:hover, #css:hover, #js:hover, #bs:hover, #photoshop:hover, #premiere:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 15px rgba(0, 0, 255, 0.4);
+  }
+
+/* Projects section styles */
+#projects-section{
+  padding-top: 2rem;
 }
+
+.projects {
+  width: 200px; 
+  height: 200px;y
+  border: 1px solid #ccc;
+  margin: 10px;
+  display: inline-block; 
+  text-align: center;
+  line-height: 200px; 
+}
+
+/* Contact section styles */
+#contact-section{
+  text-align: center;
+  align-items: space-between;
+  padding-top: 2rem;
+}
+
+#contact-section a{
+  text-decoration: none;
+}
+
+#contact-section a:hover{
+  text-decoration: none;
+  color: black;
+  transform: translateY(-5px) scale(1.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Flyers section styles */
+.slider-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+}
+
+#image {
+  max-width: 100%;
+  height: auto;
+}
+
+.slider {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  margin-bottom: 100px;
+  padding-bottom: 50px;
+}
+
+.slider{
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slider img{
+  width: 100%;
+  display: none;
+}
+
+img.displaySlide{
+  display:block;
+  animation-name: fade;
+  animation-duration: 1s;
+}
+
+.slides{
+  width: auto;
+  height: auto;
+  max-width: 500px;
+  max-height: 375px;
+}
+
+.slides img{
+  height: responsive;
+  display: ;
+}
+
+.slier button{ 
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  padding: 10px 15px;
+  background-color: white;
+  color:blue;
+  border: none;
+  cursor: pointer
+}
+
+.prev{
+  left: 0;
+}
+
+.next{
+  right: 0;
+}
+
+/* Contact form styles */
+form{
+  width: 55%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 0 auto; 
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: blue;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.rem;
+  border: 2px dashed blue;
+}
+
+form #user-info{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.form-group{
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+#user-info {
+  margin-bottom: 10px;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+#user-info label {
+  display: inline-block;
+  width: 150px;
+  text-align: center;
+  align-items: space-between;
+}
+
+#user-info label {
+  width: 100px;
+  margin-right: 10px;
+  text-align: right;
+}
+
+input:hover {
+  box-shadow: 2px 2px 5px blue(0, 0, 0, 0.94);
+  border: 2px solid blue;
+}
+
+textarea:hover{
+  box-shadow: 2px 2px 5px blue(0, 0, 0, 0.94);
+  border: 2px solid blue;
+}
+
+textarea.form-control {
+  max-width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+#comment, textarea {
+  width: 50%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 2px solid blue;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+::placeholder{
+  color:lightblue;
+  opacity: 0.8;
+}
+
+input:focus{
+  color:blue;
+}
+
+.fname .lname .email .comment {
+  margin-left: 20px;
+}
+
+.submit{
+  color: black;
+  background-color: blue;
+  border: 2px solid blue;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+/* Footer styles */
+footer{
+  text-align: center;
+  align-items: center;
+  background-color: white;
+  color: blue;
+}
+
+footer a{
+  text-decoration: none;
+  color: blue;
+}
+
+footer a:hover{
+  text-decoration: none;
+  color: darkblue;
+}
+
+/* Typography styles */
+h1, h2, h3, h4, h5, h6{
+  text-align: center;
+  align-items: center;
+  color:blue
+}
+
+p{
+  text-align: center;
+  align-items: center;
+}
+
+/* Image styles */
 img{
-    max-width: 25%;
-    height: auto;
-    width: auto;
+  max-width: 25%;
+  height: auto;
+  width: auto;
+}
+
+.headshot {
+  max-width: 50%;
+  height: 25%;
+  width: 25%; /* ie8 */
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border: 4px groove darkblue;
+}
+
+/* Animation */
+@keyframes fade{
+  from{opacity: 0.4;}
+  to{opacity: 1;}
+}
+
+/* Specific elements */
+#flyer-2 {
+  width: auto;
+  height: auto;
+  max-width: 500px;;
+  max-height: 375px;
+}
+
+#flyer-1{
+  width: auto;
+  height: auto;
+  max-width: 500px;
+  max-height: 375px;
+}
+
+main #gallery {
+  margin-bottom: 100px;
+}
+
+.linkedin-icon{
+  font-size: x-large;
+}
+
+/* Mobile responsive styles */
+@media screen and (max-width: 576px) {
+  form {
+      /* padding: 15px; */
+      width: 100%;
+  }
+    
+  .form-group {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 15px;
+  }
+  
+  label {
+      width: 100%;
+      text-align: left;
+      margin-bottom: 5px;
+  }
+  
+  .fname, .lname, .email2 {
+      width: 100%;
+      margin: 5px 0;
+  }
+  
+  .comment, textarea {
+      width: 100%;
+  }
+  
+  input[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+  }
 }
