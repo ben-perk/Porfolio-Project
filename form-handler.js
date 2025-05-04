@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
       csv += item.value + ";";
     });
 
-    csv = csv.slice(0, -1) + "\n"; // remove last semicolon and add newline
+    csv = csv.slice(0, -1) + "\n";
 
     fetch(scriptURL, {
       method: 'POST',
@@ -24,13 +24,12 @@ document.addEventListener("DOMContentLoaded", function () {
     })
       .then(response => response.text())
       .then(text => {
-        console.log("Server response:", text);
-        alert("Your message has been sent and saved!");
+        alert("Your message has been sent!");
         form.reset();
       })
       .catch(error => {
-        console.error("Error:", error);
-        alert("Failed to send message.");
+        console.error("Error!", error.message);
+        alert("There was a problem submitting the form.");
       });
   });
 });
