@@ -51,19 +51,19 @@
               <div class="row mb-3">
                 <label for="inputName" class="col-sm-2 col-form-label">Name</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" id="inputName" name="name" placeholder="Your Name" required>
+                  <input type="text" class="form-control" id="inputName" name="name" placeholder="Your Name" required autocomplete="name">
                 </div>
               </div>
               <div class="row mb-3">
                 <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
                 <div class="col-sm-10">
-                  <input type="email" class="form-control" id="inputEmail3" name="email" placeholder="name@example.com" required>
+                  <input type="email" class="form-control" id="inputEmail3" name="email" placeholder="name@example.com" required autocomplete="email">
                 </div>
               </div>
               <div class="row mb-3">
                 <label for="phoneNumber" class="col-sm-2 col-form-label">Phone Number</label>
                 <div class="col-sm-10">
-                  <input type="tel" class="form-control" id="phoneNumber" name="phone" placeholder="470-331-9586">
+                  <input type="tel" class="form-control" id="phoneNumber" name="phone" placeholder="470-331-9586" autocomplete="tel">
                 </div>
               </div>
               <fieldset class="row mb-3">
@@ -82,7 +82,7 @@
               <div class="row mb-3">
                 <label for="messageText" class="col-sm-2 col-form-label">Message</label>
                 <div class="col-sm-10">
-                  <textarea class="form-control" id="messageText" name="message" rows="5" placeholder="Please describe what kind of help you need..." required></textarea>
+                  <textarea class="form-control" id="messageText" name="message" rows="5" placeholder="Please describe what kind of help you need..." required autocomplete="off"></textarea>
                 </div>
               </div>
               <button type="submit" class="btn btn-primary" name="submitButton">Submit</button>
@@ -90,7 +90,6 @@
           </div>
         </div>
       </form>
-
       <br>
       <p>Thank you for visiting! I look forward to hearing from you.</p>
     </div>
@@ -107,7 +106,7 @@
   <!-- EmailJS and scripts -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script type="text/javascript" src ="form-handler.js"></script>
-  <script src="script.js"></script>
+  <script type="text/javascript" src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
