@@ -23,8 +23,53 @@ document.querySelector('.my-prev').addEventListener('click', prevSlide);
 
 showSlide(slideIndex);
 
+
+var scrollSPy = new bootstrap.ScrollSpy(document.body, {
+    target: '#navbar',
+  });
+
+
+//Email form data
+
+
+function clearForm(){
+    var formData = $("#contact-form").serializeArray();
+    let csv = "";
+
+    formData.forEach(function(item){
+        csv += item.value + ";";  // Only sending values
+    });
+
+    // Remove last semicolon and add newline
+    csv = csv.slice(0, -1) + "\n";
+
+    // Replace with your Google Web App URL
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbz7I2FVWAIKHPUnUdE4LAWvV9j3TUuphRoxWgnmvnM3u1lkdaeLGyDTyMfukkUzEznr6Q/exec';
+
+    fetch(scriptURL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'text/plain'
+        },
+        body: csv
+    })
+    .then(response => {
+        if (response.ok) {
+            alert("Your message has been sent and saved!");
+            document.getElementById("contact-form").reset();
+        } else {
+            alert("Failed to send message.");
+        }
+    });
+};
+
+
+
+
+
+
 // highlight section when scrolling
-document.addEventListener("DOMContentLoaded", function() {
+// document.addEventListener("DOMContentLoaded", function() {
 // code is gonna run after the page is loaded
 
 // get all sections with an id
@@ -105,9 +150,6 @@ document.addEventListener("DOMContentLoaded", function() {
 // });
 
 
-var scrollSPy = new bootstrap.ScrollSpy(document.body, {
-    target: '#navbar',
-  });
 
 // window.addEventListener("scroll", () => {
 //     // 🟢 Select all main sections and nav links
