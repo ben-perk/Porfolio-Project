@@ -3,6 +3,11 @@ const scriptURL = 'https://script.google.com/macros/s/AKfycbz7I2FVWAIKHPUnUdE4LA
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("contact-form");
 
+  if (!form) {
+    console.error("Form with ID 'contact-form' not found.");
+    return;
+  }
+
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -13,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
       csv += item.value + ";";
     });
 
-    csv = csv.slice(0, -1) + "\n";
+    csv = csv.slice(0, -1) + "\n"; // Remove last semicolon and add newline
 
     fetch(scriptURL, {
       method: 'POST',
