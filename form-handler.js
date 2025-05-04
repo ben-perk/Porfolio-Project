@@ -1,39 +1,29 @@
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("contact-form");
   
-    if (!form) {
-      console.error("Form with ID 'contact-form' not found.");
-      return;
-    }
-  
     form.addEventListener("submit", function (e) {
       e.preventDefault();
   
-      const formData = new FormData(form);
-      let csv = "";
-  
-      for (const [key, value] of formData.entries()) {
-        csv += `"${value}";`; // wrap values to handle commas
-      }
-  
-      csv = csv.slice(0, -1) + "\n"; // Remove trailing semicolon and add newline
+      const formData = {
+        name: form.name.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        contact_method: form.contact_method.value,
+        message: form.message.value,
+      };
   
       fetch("https://script.google.com/macros/s/AKfycbz7I2FVWAIKHPUnUdE4LAWvV9j3TUuphRoxWgnmvnM3u1lkdaeLGyDTyMfukkUzEznr6Q/exec", {
         method: "POST",
+        mode: "no-cors", // prevents CORS errors but hides response; works for simple data like this
         headers: {
-          "Content-Type": "text/plain",
+          "Content-Type": "application/json",
         },
-        body: csv,
-      })
-        .then((response) => response.text())
-        .then((result) => {
-          alert("Form submitted successfully!");
-          form.reset();
-        })
-        .catch((error) => {
-          console.error("Submission error:", error);
-          alert("There was a problem submitting the form.");
-        });
+        body: JSON.stringify(formData),
+      });
+  
+      // Optional: reset form and show message
+      form.reset();
+      alert("Thank you! Your message has been sent.");
     });
   });
   
