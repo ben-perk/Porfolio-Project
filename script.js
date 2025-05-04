@@ -23,7 +23,7 @@ document.querySelector('.my-prev').addEventListener('click', prevSlide);
 
 showSlide(slideIndex);
 
-
+//scrollspy
 var scrollSPy = new bootstrap.ScrollSpy(document.body, {
     target: '#navbar',
   });
