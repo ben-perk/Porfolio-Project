@@ -12,7 +12,7 @@ form.addEventListener("submit", async function (e) {
   };
 
   try {
-    const response = await fetch("YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL", {
+    const response = await fetch("https://script.google.com/macros/s/AKfycbz7I2FVWAIKHPUnUdE4LAWvV9j3TUuphRoxWgnmvnM3u1lkdaeLGyDTyMfukkUzEznr6Q/exec", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -21,14 +21,9 @@ form.addEventListener("submit", async function (e) {
     });
 
     const result = await response.json();
-
-    if (result.result === "success") {
-      alert("Message sent successfully!");
-      form.reset();
-    } else {
-      alert("Server error: " + (result.error || "Unknown issue"));
-    }
+    alert("Message sent successfully!");
+    form.reset();
   } catch (error) {
-    alert("Submission failed: " + error.message);
+    alert("Failed to send: " + error.message);
   }
 });
