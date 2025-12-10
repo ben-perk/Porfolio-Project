@@ -486,7 +486,7 @@ main #gallery {
 }
 
 /* Image sizing for skills section */
-#html img, #css img, #js img, #bs img, #photoshop img, #premiere img, #figma img, #jamf img, #knox img {
+#html img, #css img, #js img, #bs img, #photoshop img, #premiere img, #figma img, #jamf img, #knox img, #support img {
   max-width: 128px;
   width: 128px;
   height: auto;
