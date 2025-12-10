@@ -9,6 +9,33 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    .calculator-link {
+      text-decoration: none;
+      color: blue;
+      display: inline-block;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .calculator-link:hover {
+      transform: translateY(-8px) scale(1.05);
+      color: blue;
+      text-shadow: 0 5px 10px rgba(0, 0, 255, 0.3);
+    }
+    
+    .calculator-link i {
+      transition: transform 0.3s ease;
+    }
+    
+    .calculator-link:hover i {
+      transform: scale(1.1);
+    }
+    
+    #jamf:hover, #knox:hover, #support:hover, #figma:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 15px rgba(0, 0, 255, 0.4);
+    }
+  </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbar">
   <header>
@@ -28,6 +55,9 @@
               <a class="nav-link" aria-current="page" href="#skills-section">Skills</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="#projects-section">Projects</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="#contact-section">Contact information</a>
             </li>  
             <li class="nav-item">
@@ -44,8 +74,8 @@
       </div>
     </nav> 
       <!-- Hero section -->
-   <section id="hero-section">
-      <img src="images/ben.jpg" alt=" photo of Ben" id="ben-img">
+   <section id="hero-section" role="banner">
+      <img src="images/ben.jpg" alt="Benjamin Perkton professional headshot" id="ben-img">
       <div class="hero-text">
         <h1>Benjamin Perkton</h1>
         <p>Web Development Student</p>
@@ -93,52 +123,138 @@
   <!-- Skills section -->
   <section id="skills-section">
     <h1>Skills</h1>
+    
+    <!-- Web Development Skills -->
+    <h2 class="mt-4 mb-3">Web Development</h2>
     <div class="row">
       <div class="col-12 col-md-6 col-lg-3" id="html">
         <h3>HTML</h3>
-        <img src="images/html.png" alt="html icon">
-        <p>Skilled in HTML for structuring web content, creating responsive layouts, <br>
-          and ensuring cross-device compatibility.<br>
-          Experienced in optimizing websites for functionality, user experience, <br>
-          and search engine visibility.</p>
+        <img src="images/html.png" alt="HTML5 logo">
+        <p>Skilled in HTML for structuring web content, creating responsive layouts, and ensuring cross-device compatibility. Experienced in optimizing websites for functionality, user experience, and search engine visibility.</p>
       </div>
       <div class="col-12 col-md-6 col-lg-3" id="css">
         <h3>CSS</h3>
-        <img src="images/css.png" alt="css icon">
-        <p>Proficient in CSS for styling web pages, creating responsive designs, <br>
-          and enhancing user experience. <br>
-          Experienced in optimizing layouts for different devices <br>
-          and ensuring visual consistency across browsers.</p>
+        <img src="images/css.png" alt="CSS3 logo">
+        <p>Proficient in CSS for styling web pages, creating responsive designs, and enhancing user experience. Experienced in optimizing layouts for different devices and ensuring visual consistency across browsers.</p>
       </div>
       <div class="col-12 col-md-6 col-lg-3" id="js">
         <h3>JavaScript</h3>
-        <img src="images/filetype-js (1).svg" alt="JavaScript icon">
-        <p>Skilled in JavaScript for adding interactivity and dynamic functionality to web pages. <br>
-          Experienced in using JavaScript libraries<br>
-          to enhance user experience and streamline development.</p>
+        <img src="images/filetype-js (1).svg" alt="JavaScript logo">
+        <p>Skilled in JavaScript for adding interactivity and dynamic functionality to web pages. Experienced in using JavaScript libraries to enhance user experience and streamline development.</p>
       </div>
       <div class="col-12 col-md-6 col-lg-3" id="bs">
         <h3>Bootstrap</h3>
-        <img src="images/bootstrap.png" alt="bootstrap icon">
-        <p>Proficient in Bootstrap for building responsive, <br>
-          mobile-first websites with pre-built components. <br>
-          Experienced in customizing layouts and ensuring <br>
-          cross-device compatibility with minimal code.</p>
+        <img src="images/bootstrap.png" alt="Bootstrap logo">
+        <p>Proficient in Bootstrap for building responsive, mobile-first websites with pre-built components. Experienced in customizing layouts and ensuring cross-device compatibility with minimal code.</p>
       </div>
     </div>
+    
+    <!-- Design Skills -->
+    <h2 class="mt-5 mb-3">Design & Creative</h2>
     <div class="row">
-      <div class="col-12 col-md-6 col-lg-6" id="photoshop">
-        <h2>Photoshop</h2>
-        <img src="images/photoshop.png" alt="photoshop icon">
-        <p>Skilled in Photoshop for creating and editing high-quality graphics, images,<br>
-          and layouts. Experienced in optimizing visuals for web and print,<br>
-          ensuring design consistency and attention to detail.</p>
+      <div class="col-12 col-md-6 col-lg-4" id="photoshop">
+        <h3>Photoshop</h3>
+        <img src="images/photoshop.png" alt="Adobe Photoshop logo">
+        <p>Skilled in Photoshop for creating and editing high-quality graphics, images, and layouts. Experienced in optimizing visuals for web and print, ensuring design consistency and attention to detail.</p>
       </div>
-      <div class="col-12 col-md-6 col-lg-6" id="premiere">
-        <h2>Premiere Pro</h2>
-        <img src="images/premiere.png" alt="premiere pro icon">
-        <p>Proficient in Premiere Pro for video editing, color correction, and sound design. <br>
-          Experienced in creating engaging video content for background performance videos.</p>
+      <div class="col-12 col-md-6 col-lg-4" id="premiere">
+        <h3>Premiere Pro</h3>
+        <img src="images/premiere.png" alt="Adobe Premiere Pro logo">
+        <p>Proficient in Premiere Pro for video editing, color correction, and sound design. Experienced in creating engaging video content for background performance videos.</p>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4" id="figma">
+        <h3>Figma</h3>
+        <img src="images/Figma-logo.svg.png" alt="Figma logo">
+        <p>Experienced in Figma for UI/UX design, prototyping, and collaborative design workflows. Skilled in creating wireframes, mockups, and interactive prototypes for responsive web applications.</p>
+      </div>
+    </div>
+    
+    <!-- IT & Mobile Device Management -->
+    <h2 class="mt-5 mb-3">IT & Mobile Device Management</h2>
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-4" id="jamf">
+        <h3>Jamf Pro</h3>
+        <img src="images/jamf.png" alt="Jamf Pro logo">
+        <p>Experienced in administering Jamf Pro MDM platform for iOS device management. Skilled in deploying, configuring, and securing enterprise mobile devices, and managing large-scale device migrations.</p>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4" id="knox">
+        <h3>Samsung Knox</h3>
+        <img src="images/knox.png" alt="Samsung Knox logo">
+        <p>Proficient in Samsung Knox MDM for Android device management. Experienced in enterprise mobile security, device configuration, and policy enforcement across Android platforms.</p>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4" id="support">
+        <h3>Technical Support</h3>
+        <i class="bi bi-tools" style="font-size: 4rem; color: #666;" role="img" aria-label="Technical support tools icon"></i>
+        <p>Tier 1/2 technical support specialist for iOS and Android devices. Expert in troubleshooting hardware, software, and connectivity issues. Led 150+ device migration with minimal operational disruption.</p>
+      </div>
+    </div>
+    
+    <!-- Additional Tools -->
+    <h2 class="mt-5 mb-3">Tools & Platforms</h2>
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-3">
+        <h4><i class="bi bi-github" role="img" aria-label="GitHub"></i> GitHub</h4>
+        <p>Version control and collaborative development</p>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <h4><i class="bi bi-wordpress" role="img" aria-label="WordPress"></i> WordPress</h4>
+        <p>Content management and website development</p>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <h4><i class="bi bi-kanban" role="img" aria-label="Jira"></i> Jira</h4>
+        <p>Project management and issue tracking</p>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <h4><i class="bi bi-headset" role="img" aria-label="Halo"></i> Halo</h4>
+        <p>IT service management and ticketing system</p>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <h4><i class="bi bi-diagram-3" role="img" aria-label="Confluence"></i> Confluence</h4>
+        <p>Documentation and knowledge management</p>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <h4><i class="bi bi-clipboard-data" role="img" aria-label="IT Glue"></i> IT Glue</h4>
+        <p>IT documentation and asset management</p>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <h4><i class="bi bi-shield-lock" role="img" aria-label="NinjaOne"></i> NinjaOne</h4>
+        <p>Remote monitoring and management (RMM)</p>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <h4><i class="bi bi-microsoft" role="img" aria-label="Microsoft Suite"></i> Microsoft Suite</h4>
+        <p>Office productivity and collaboration tools</p>
+      </div>
+    </div>
+  </section>
+  <hr>
+  <!-- Projects section -->
+  <section id="projects-section">
+    <h1>Projects</h1>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h3>Pageant Score Calculator</h3>
+          <p class="lead">A comprehensive web application designed to streamline pageant scoring with automated calculations and Excel integration.</p>
+          
+          <h5 class="mt-4">Key Features:</h5>
+          <ul>
+            <li>Manage unlimited contestants, categories, and judges</li>
+            <li>Direct score entry with dynamic tables</li>
+            <li>Excel template download/upload functionality</li>
+            <li>Automated score calculation with outlier removal option</li>
+            <li>Export final results to Excel</li>
+            <li>Demo data for quick testing</li>
+          </ul>
+          
+          <p class="mt-3"><small><strong>Technologies:</strong> HTML5, CSS3, JavaScript, Bootstrap 5, jQuery</small></p>
+        </div>
+        
+        <div class="col-lg-6 mt-4 mt-lg-0 text-center">
+          <a href="https://ben-perk.github.io/Score-Calculator/" target="_blank" aria-label="Launch Pageant Calculator in new window" class="calculator-link">
+            <i class="bi bi-calculator" style="font-size: 10rem;"></i>
+            <p class="mt-3">Click to Launch Calculator</p>
+          </a>
+        </div>
       </div>
     </div>
   </section>
