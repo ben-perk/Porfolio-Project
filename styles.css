@@ -452,3 +452,53 @@ main #gallery {
       margin-top: 10px;
   }
 }
+
+/* Calculator link styles */
+.calculator-link {
+  text-decoration: none;
+  color: blue;
+  display: inline-block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.calculator-link:hover {
+  transform: translateY(-8px) scale(1.05);
+  color: blue;
+  text-shadow: 0 5px 10px rgba(0, 0, 255, 0.3);
+}
+
+.calculator-link i {
+  transition: transform 0.3s ease;
+}
+
+.calculator-link:hover i {
+  transform: scale(1.1);
+}
+
+/* IT & MDM and Design skills hover effects */
+#jamf, #knox, #support, #figma {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#jamf:hover, #knox:hover, #support:hover, #figma:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 15px rgba(0, 0, 255, 0.4);
+}
+
+/* Image sizing for skills section */
+#html img, #css img, #js img, #bs img, #photoshop img, #premiere img, #figma img, #jamf img, #knox img {
+  max-width: 128px;
+  width: 128px;
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem;
+}
+
+
+/* Technical Support icon styling */
+#support .bi-tools {
+  font-size: 4rem;
+  color: #666;
+  display: block;
+  margin: 0 auto 1rem;
+}
