@@ -44,23 +44,18 @@ nav a:focus{
 
 /* Hero section styles */
 #hero-section{ 
-  /* position: relative; */
   background-image: url("images/heroimg.png");
-  /* background-image: linear-gradient(rgba(15, 41, 47, 0.5), rgba(15, 41, 47, 0.5)), url(img/bulb\ window.png); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  /* position: relative; */
-  /* text-align: center; */
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   gap: 25px;
   margin: 0;
-  /* margin-top: 75px; */
-  padding: 0;
+  padding: 2rem;
   height: 75vh;
   color: white;
 }
@@ -68,9 +63,14 @@ nav a:focus{
 #hero-section h1{
   font-size: 50px;
   color:white;
+  text-align: center;
 }
 
-/* min width px max width % */
+#hero-section p {
+  font-size: 1.25rem;
+  text-align: center;
+}
+
 #hero-section img {
   min-width: 150px;
   max-width: 15%;
@@ -82,6 +82,7 @@ nav a:focus{
 /* Section styles */
 section {
   margin: 20px;
+  padding: 1rem;
 }
 
 #main-section{
@@ -101,11 +102,12 @@ section {
   padding-top: 2rem;
 }
 
-
-
-#html, #css, #bs, #photoshop, #js, #premiere {
+#html, #css, #bs, #photoshop, #js, #premiere, #jamf, #knox, #support, #figma {
   align-items: center;
   text-align: center;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #js img {
@@ -121,11 +123,11 @@ section {
 #skills-section .col:hover {
     translateY(-10px);
     scale: 1.05;
-    box-shadow: 0 10px 20px rgba(0, 0, 255, 0.5); /* Blue with transparency */
+    box-shadow: 0 10px 20px rgba(0, 0, 255, 0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease, scale 0.3s ease;
   }
 
-  #html:hover, #css:hover, #js:hover, #bs:hover, #photoshop:hover, #premiere:hover {
+#html:hover, #css:hover, #js:hover, #bs:hover, #photoshop:hover, #premiere:hover, #jamf:hover, #knox:hover, #support:hover, #figma:hover {
     transform: translateY(-8px);
     box-shadow: 0 8px 15px rgba(0, 0, 255, 0.4);
   }
@@ -135,9 +137,13 @@ section {
   padding-top: 2rem;
 }
 
+#projects-section .container {
+  padding: 2rem 1rem;
+}
+
 .projects {
   width: 200px; 
-  height: 200px;y
+  height: 200px;
   border: 1px solid #ccc;
   margin: 10px;
   display: inline-block; 
@@ -163,91 +169,37 @@ section {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Flyers section styles */
+#contact-section .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
 
+/* Flyers section styles */
+#flyers-section {
+  padding-top: 2rem;
+}
 
 .carousel-item {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 500px; /* or whatever height you want */
-    background-color: #000; /* optional for contrast */
+    height: 500px;
+    background-color: #000;
   }
   
-  .carousel-item img {
+.carousel-item img {
     max-height: 100%;
     width: auto;
     max-width: 100%;
     object-fit: contain;
   }
 
-/* .slider-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px auto;
-}
-
-#image {
-  max-width: 100%;
-  height: auto;
-}
-
-.slider {
-  width: 100%;
-  margin: auto;
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.slides {
-  width: 100%;
-  max-width: 500px;
-  max-height: 375px;
-  position: relative;
-}
-
-.slides img {
-  width: 100%;
-  height: auto;
-  display: none;
-  object-fit: contain;
-}
-
-img.displaySlide {
-  display: block;
-  animation-name: fade;
-  animation-duration: 1s;
-}
-
-.slider button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2rem;
-  padding: 10px 15px;
-  background-color: rgba(255, 255, 255, 0.7);
-  color: blue;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 10;
-}
-
-.prev {
-  left: 10px;
-}
-
-.next {
-  right: 10px;
-} */
-
 /* Contact form styles */
 form{
-  width: 55%;
+  width: 90%;
+  max-width: 800px;
   background-color: white;
   padding: 20px;
   border-radius: 10px;
@@ -256,7 +208,7 @@ form{
   margin-bottom: 50px;
   color: blue;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.rem;
+  font-size: 1rem;
   border: 2px dashed blue;
 }
 
@@ -274,30 +226,21 @@ form #user-info{
 
 #user-info {
   margin-bottom: 10px;
-  margin-left: 30%;
-  margin-right: 30%;
 }
 
 #user-info label {
   display: inline-block;
   width: 150px;
-  text-align: center;
-  align-items: space-between;
-}
-
-#user-info label {
-  width: 100px;
-  margin-right: 10px;
-  text-align: right;
+  text-align: left;
 }
 
 input:hover {
-  box-shadow: 2px 2px 5px blue(0, 0, 0, 0.94);
+  box-shadow: 2px 2px 5px rgba(0, 0, 255, 0.3);
   border: 2px solid blue;
 }
 
 textarea:hover{
-  box-shadow: 2px 2px 5px blue(0, 0, 0, 0.94);
+  box-shadow: 2px 2px 5px rgba(0, 0, 255, 0.3);
   border: 2px solid blue;
 }
 
@@ -308,7 +251,7 @@ textarea.form-control {
 }
 
 #comment, textarea {
-  width: 50%;
+  width: 100%;
   padding: 12px;
   margin-bottom: 15px;
   border: 2px solid blue;
@@ -316,8 +259,6 @@ textarea.form-control {
   font-family: Arial, sans-serif;
   font-size: 16px;
   transition: all 0.3s ease;
-  margin-left: 10%;
-  margin-right: 10%;
 }
 
 ::placeholder{
@@ -329,17 +270,20 @@ input:focus{
   color:blue;
 }
 
-.fname .lname .email .comment {
-  margin-left: 20px;
-}
-
 .submit{
-  color: black;
+  color: white;
   background-color: blue;
   border: 2px solid blue;
   border-radius: 5px;
   padding: 10px 20px;
   font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit:hover {
+  background-color: darkblue;
+  transform: scale(1.05);
 }
 
 /* Footer styles */
@@ -368,14 +312,28 @@ h1, h2, h3, h4, h5, h6{
   color:blue
 }
 
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
 p{
   text-align: center;
   align-items: center;
+  line-height: 1.6;
 }
 
 /* Image styles */
 img{
-  max-width: 25%;
+  max-width: 100%;
   height: auto;
   width: auto;
 }
@@ -383,7 +341,7 @@ img{
 .headshot {
   max-width: 50%;
   height: 25%;
-  width: 25%; /* ie8 */
+  width: 25%;
   border-top-left-radius: 50%;
   border-bottom-right-radius: 50%;
   border: 2px groove white;
@@ -399,7 +357,7 @@ img{
 #flyer-2 {
   width: auto;
   height: auto;
-  max-width: 500px;;
+  max-width: 500px;
   max-height: 375px;
 }
 
@@ -416,41 +374,6 @@ main #gallery {
 
 .linkedin-icon{
   font-size: x-large;
-}
-
-/* Mobile responsive styles */
-@media screen and (max-width: 576px) {
-  form {
-      /* padding: 15px; */
-      width: 100%;
-  }
-    
-  .form-group {
-      flex-direction: column;
-      align-items: flex-start;
-      margin-bottom: 15px;
-  }
-  
-  label {
-      width: 100%;
-      text-align: left;
-      margin-bottom: 5px;
-  }
-  
-  .fname, .lname, .email2 {
-      width: 100%;
-      margin: 5px 0;
-  }
-  
-  .comment, textarea {
-      width: 100%;
-  }
-  
-  input[type="submit"] {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-  }
 }
 
 /* Calculator link styles */
@@ -475,16 +398,6 @@ main #gallery {
   transform: scale(1.1);
 }
 
-/* IT & MDM and Design skills hover effects */
-#jamf, #knox, #support, #figma {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#jamf:hover, #knox:hover, #support:hover, #figma:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 15px rgba(0, 0, 255, 0.4);
-}
-
 /* Image sizing for skills section */
 #html img, #css img, #js img, #bs img, #photoshop img, #premiere img, #figma img, #jamf img, #knox img, #support img {
   max-width: 128px;
@@ -494,11 +407,378 @@ main #gallery {
   margin: 0 auto 1rem;
 }
 
-
 /* Technical Support icon styling */
-#support .bi-tools {
+#support img {
   font-size: 4rem;
   color: #666;
   display: block;
   margin: 0 auto 1rem;
+}
+
+/* ========================================
+   MOBILE RESPONSIVE STYLES
+   ======================================== */
+
+/* Tablet and below (768px) */
+@media screen and (max-width: 768px) {
+  body {
+    padding-top: 56px;
+  }
+
+  main {
+    margin: 1rem;
+  }
+
+  section {
+    margin: 10px;
+    padding: 0.5rem;
+  }
+
+  /* Hero section adjustments */
+  #hero-section {
+    height: 60vh;
+    padding: 1rem;
+    gap: 15px;
+  }
+
+  #hero-section h1 {
+    font-size: 2rem;
+  }
+
+  #hero-section p {
+    font-size: 1rem;
+  }
+
+  #hero-section img {
+    max-width: 35%;
+    min-width: 120px;
+  }
+
+  /* Typography adjustments */
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+  }
+
+  /* Skills section */
+  #skills-section .row {
+    gap: 1rem;
+  }
+
+  #html, #css, #bs, #photoshop, #js, #premiere, #jamf, #knox, #support, #figma {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+  }
+
+  /* Contact section */
+  #contact-section .row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  #contact-section i {
+    font-size: 2.5rem !important;
+  }
+
+  /* Carousel adjustments */
+  .carousel-item {
+    height: 400px;
+  }
+
+  /* Calculator link */
+  .calculator-link i {
+    font-size: 6rem !important;
+  }
+}
+
+/* Mobile phones (576px and below) */
+@media screen and (max-width: 576px) {
+  body {
+    padding-top: 56px;
+  }
+
+  main {
+    margin: 0.5rem;
+  }
+
+  section {
+    margin: 5px;
+    padding: 0.5rem;
+  }
+
+  /* Hero section */
+  #hero-section {
+    height: 50vh;
+    padding: 1rem 0.5rem;
+    gap: 10px;
+    background-attachment: scroll;
+  }
+
+  #hero-section h1 {
+    font-size: 1.75rem;
+  }
+
+  #hero-section p {
+    font-size: 0.9rem;
+  }
+
+  #hero-section img {
+    max-width: 45%;
+    min-width: 100px;
+    border: 5px solid transparent;
+  }
+
+  /* Typography */
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  h4 {
+    font-size: 1.1rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    padding: 0 0.5rem;
+  }
+
+  /* Mission section text */
+  #mission-section p br {
+    display: none;
+  }
+
+  /* Skills section */
+  #html, #css, #bs, #photoshop, #js, #premiere, #jamf, #knox, #support, #figma {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+  }
+
+  #html img, #css img, #js img, #bs img, #photoshop img, #premiere img, #figma img, #jamf img, #knox img, #support img {
+    max-width: 96px;
+    width: 96px;
+  }
+
+  #html p, #css p, #js p, #bs p, #photoshop p, #premiere p, #figma p, #jamf p, #knox p, #support p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  /* Projects section */
+  #projects-section .container {
+    padding: 1rem 0.5rem;
+  }
+
+  #projects-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  #projects-section .lead {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  #projects-section h5 {
+    text-align: left;
+    font-size: 1.1rem;
+  }
+
+  #projects-section ul {
+    padding-left: 1.5rem;
+    text-align: left;
+  }
+
+  #projects-section ul li {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    text-align: left;
+  }
+
+  #projects-section small {
+    font-size: 0.85rem;
+  }
+
+  /* Calculator link */
+  .calculator-link i {
+    font-size: 5rem !important;
+  }
+
+  .calculator-link p {
+    font-size: 0.9rem;
+  }
+
+  /* Contact section */
+  #contact-section .row {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  #contact-section i {
+    font-size: 3rem !important;
+  }
+
+  #contact-section h4 {
+    font-size: 1rem;
+  }
+
+  /* Carousel */
+  .carousel-item {
+    height: 300px;
+  }
+
+  /* Flyers section */
+  #flyers-section > p {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+
+  #flyers-section > div > p {
+    font-size: 0.9rem;
+  }
+
+  /* Tools & Platforms section */
+  #skills-section .row div[class*='col-'] h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  #skills-section .row div[class*='col-'] h4 i {
+    font-size: 1.5rem;
+  }
+
+  #skills-section .row div[class*='col-'] p {
+    font-size: 0.85rem;
+  }
+
+  /* Form adjustments */
+  form {
+    width: 95%;
+    padding: 15px;
+  }
+    
+  .form-group {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+  }
+  
+  #user-info label {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 5px;
+  }
+  
+  .fname, .lname, .email2 {
+    width: 100%;
+    margin: 5px 0;
+  }
+  
+  #comment, textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  input[type="submit"], .submit {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+  }
+
+  /* Footer */
+  footer {
+    padding: 15px 10px;
+    font-size: 0.9rem;
+  }
+
+  /* Resume iframe */
+  iframe {
+    height: 400px !important;
+  }
+
+  .text-center.mt-3.mb-4 {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Navbar adjustments */
+  .navbar-brand i {
+    font-size: 1.5rem;
+  }
+
+  .nav-link {
+    padding: 0.75rem 1rem;
+  }
+
+  /* Disable hover effects on mobile */
+  #skills-section .col:hover,
+  #html:hover, #css:hover, #js:hover, #bs:hover, 
+  #photoshop:hover, #premiere:hover, #jamf:hover, 
+  #knox:hover, #support:hover, #figma:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  nav a:hover {
+    transform: none;
+  }
+
+  .calculator-link:hover {
+    transform: none;
+  }
+
+  #contact-section a:hover {
+    transform: none;
+  }
+}
+
+/* Extra small devices (400px and below) */
+@media screen and (max-width: 400px) {
+  #hero-section h1 {
+    font-size: 1.5rem;
+  }
+
+  #hero-section p {
+    font-size: 0.85rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+  }
+
+  .calculator-link i {
+    font-size: 4rem !important;
+  }
+
+  #contact-section i {
+    font-size: 2.5rem !important;
+  }
 }
