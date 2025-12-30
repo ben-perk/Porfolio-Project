@@ -280,31 +280,71 @@
   <section id="projects-section">
     <h2>Featured Projects</h2>
     <div class="container">
-      <div class="row align-items-center">
+      
+      <!-- Project 1: Pageant Calculator -->
+      <div class="row align-items-center mb-5 pb-5 border-bottom">
         <div class="col-lg-6">
-          <h3>Score Calculator</h3>
+          <h3>Pageant Calculator</h3>
           <p class="lead">A comprehensive web application designed to streamline pageant scoring with automated calculations and Excel integration.</p>
           
           <h4 class="mt-4">Key Features:</h4>
           <ul>
-            <li>Manage unlimited contestants, categories, and judges</li>
-            <li>Direct score entry with dynamic tables</li>
-            <li>Excel template download/upload functionality</li>
-            <li>Automated score calculation with outlier removal option</li>
-            <li>Export final results to Excel</li>
-            <li>Demo data for quick testing</li>
+            <li>Dynamic table generation for unlimited contestants, categories, and judges</li>
+            <li>Real-time score entry with input validation and error handling</li>
+            <li>Excel template download/upload functionality using SheetJS library</li>
+            <li>Automated score calculation with configurable outlier removal</li>
+            <li>Export final results to formatted Excel spreadsheets</li>
+            <li>Pre-loaded demo data for rapid testing and evaluation</li>
+            <li>Responsive design optimized for desktop and tablet devices</li>
           </ul>
           
-          <p class="mt-3"><small><strong>Technologies:</strong> HTML5, CSS3, JavaScript, Bootstrap 5, jQuery</small></p>
+          <p class="mt-3"><small><strong>Technologies:</strong> HTML5, CSS3, JavaScript (ES6), Bootstrap 5, jQuery, SheetJS (XLSX)</small></p>
+    
         </div>
         
         <div class="col-lg-6 mt-4 mt-lg-0 text-center">
-          <a href="https://ben-perk.github.io/Score-Calculator/" target="_blank" rel="noopener noreferrer" aria-label="Launch Pageant Score Calculator web application in new window" class="calculator-link">
-            <i class="bi bi-calculator" style="font-size: 10rem;"></i>
+          <a href="https://pageant-calculator.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Launch Pageant Score Calculator web application in new window" class="calculator-link">
+            <i class="bi bi-calculator" style="font-size: 10rem; color: var(--primary);"></i>
             <p class="mt-3">Click to Launch Calculator</p>
           </a>
         </div>
       </div>
+      
+      <!-- Project 2: Company Phone Book -->
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h3>Company Phone Book</h3>
+          <p class="lead">A full-stack employee directory application with dual-portal architecture, real-time database synchronization, and multilingual support for streamlined contact management.</p>
+
+          <h4 class="mt-4">Key Features:</h4>
+          <ul>
+            <li>Advanced search with multi-criteria filtering (name, department, location, supervisor)</li>
+            <li>Admin dashboard with full CRUD operations and password authentication</li>
+            <li>Bulk Excel import/export with client-side data validation</li>
+            <li>Multiple export formats: vCard (individual/bulk), CSV, and Excel (XLSX)</li>
+            <li>Real-time database synchronization using Supabase Realtime subscriptions</li>
+            <li>Bilingual user interface (English/Spanish) with localStorage persistence</li>
+            <li>Progressive Web App (PWA) with offline capabilities and mobile installation</li>
+            <li>Optional Microsoft Azure Active Directory (Azure AD) integration</li>
+            <li>Responsive design with WCAG 2.1 accessibility compliance</li>
+          </ul>
+
+          <p class="mt-3"><small><strong>Technologies:</strong> HTML5, CSS3, JavaScript (ES6+), Bootstrap 5, Supabase (PostgreSQL), REST API, SheetJS (XLSX), MSAL.js (Azure AD), vCard generation, WebSocket</small></p>
+          
+          <div class="alert alert-info mt-3" role="alert">
+            <strong><i class="bi bi-key-fill me-2"></i>Admin Access:</strong> Password is <b><code>Good99Job!</code></b>
+          </div>
+          
+        </div>
+        
+        <div class="col-lg-6 mt-4 mt-lg-0 text-center">
+          <a href="https://company-phonebook.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Launch Company Phone Book web application in new window" class="calculator-link">
+            <i class="bi bi-person-lines-fill" style="font-size: 10rem; color: var(--primary);"></i>
+            <p class="mt-3">Click to View Phone Book</p>
+          </a>
+        </div>
+      </div>
+      
     </div>
   </section>
   <hr>
