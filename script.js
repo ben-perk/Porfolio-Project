@@ -1,176 +1,201 @@
-const slides = document.querySelectorAll('.my-slider img');
-let slideIndex = 0;
+/* ============================================
+   BENJAMIN PERKTON — PORTFOLIO SCRIPTS
+   Modern JavaScript with hamburger menu & carousel
+   ============================================ */
 
-function showSlide(index) {
-  slides.forEach((slide, i) => {
-    slide.classList.remove('displaySlide');
-    if (i === index) slide.classList.add('displaySlide');
+// ============ HAMBURGER MENU ============
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navLinks.classList.toggle('active');
+});
+
+// Close menu when a link is clicked
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('active');
+  });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('nav')) {
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('active');
+  }
+});
+
+// ============ CAROUSEL FUNCTIONALITY ============
+const carouselTrack = document.getElementById('carouselTrack');
+
+if (carouselTrack) {
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.carousel-slide');
+  const dots = document.querySelectorAll('.dot');
+  const totalSlides = slides.length;
+
+  function updateCarousel() {
+    carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentSlide);
+    });
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateCarousel();
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    updateCarousel();
+  }
+
+  function goToSlide(index) {
+    currentSlide = index;
+    updateCarousel();
+  }
+
+  document.getElementById('nextBtn').addEventListener('click', nextSlide);
+  document.getElementById('prevBtn').addEventListener('click', prevSlide);
+
+  dots.forEach((dot) => {
+    dot.addEventListener('click', () => {
+      goToSlide(parseInt(dot.getAttribute('data-index')));
+    });
+  });
+
+  setInterval(nextSlide, 5000);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') nextSlide();
+    if (e.key === 'ArrowLeft') prevSlide();
   });
 }
 
-function nextSlide() {
-  slideIndex = (slideIndex + 1) % slides.length;
-  showSlide(slideIndex);
-}
+// ============ SMOOTH SCROLL NAVIGATION ============
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    
+    // Don't prevent default for nav logo or empty hrefs
+    if (href === '#' || href === '#contact-form') {
+      return;
+    }
 
-function prevSlide() {
-  slideIndex = (slideIndex - 1 + slides.length) % slides.length;
-  showSlide(slideIndex);
-}
-
-document.querySelector('.my-next').addEventListener('click', nextSlide);
-document.querySelector('.my-prev').addEventListener('click', prevSlide);
-
-showSlide(slideIndex);
-
-//scrollspy
-var scrollSPy = new bootstrap.ScrollSpy(document.body, {
-    target: '#navbar',
+    e.preventDefault();
+    const target = document.querySelector(href);
+    
+    if (target) {
+      const offsetTop = target.offsetTop - 80; // Account for fixed nav
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
   });
+});
 
+// ============ SCROLL ANIMATIONS ============
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
 
-//Email form data
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
 
+// Observe all skill cards and project cards for animation
+document.querySelectorAll('.skill-card, .project-card, .contact-card').forEach(card => {
+  card.style.opacity = '0';
+  observer.observe(card);
+});
 
-// function clearForm(){
-//     var formData = $("#contact-form").serializeArray();
-//     let csv = "";
-
-//     formData.forEach(function(item){
-//         csv += item.value + ";";  // Only sending values
-//     });
-
-//     // Remove last semicolon and add newline
-//     csv = csv.slice(0, -1) + "\n";
-
-//     // Replace with your Google Web App URL
-//     const scriptURL = 'https://script.google.com/macros/s/AKfycbz7I2FVWAIKHPUnUdE4LAWvV9j3TUuphRoxWgnmvnM3u1lkdaeLGyDTyMfukkUzEznr6Q/exec';
-
-//     fetch(scriptURL, {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'text/plain'
-//         },
-//         body: csv
-//     })
-//     .then(response => {
-//         if (response.ok) {
-//             alert("Your message has been sent and saved!");
-//             document.getElementById("contact-form").reset();
-//         } else {
-//             alert("Failed to send message.");
-//         }
-//     });
-// };
-
-
-
-
-
-
-// highlight section when scrolling
-// document.addEventListener("DOMContentLoaded", function() {
-// code is gonna run after the page is loaded
-
-// get all sections with an id
-//       const sections = document.querySelectorAll("section[id]");
-//       // add scroll event listener to the window
-// window.addEventListener("scroll", navHighlighter);
-// // the function that highlights the section when scrolling
-// function navHighlighter(){
-//       let scrollY =window.pageYOffset;
-//       // ScollY is how far up or down the screen the user has scrolled
-
-//       // looop time 
-//       sections.forEach(current =>{
-//           // stuff were gonna do for each section
-
-//           // the height of the section
-//           const sectionHeight = current.offsetHeight;   
-
-//           // the top of the section
-//           const sectionTop = current.offsetTop - 50; // 50 is the offset for the top of the page
-
-//           // the id of the section
-//           const sectionId = current.getAttribute("id");
-
-//           // if statenet time
-
-//           if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-//               // add the active class to the nav link that corresponds to the section
-//               document.querySelector(".nav-menu a[href*=" + sectionId + "]").classList.add("active");
-//           } else {
-//               // if the section is not in view, remove the active class from the nav link
-//               document.querySelector(".nav-menu a[href*=" + sectionId + "]").classList.remove("active");
-//           }
-//       }}
-
-// });
-
-// EmailJS initialization and form handling
-// document.addEventListener("DOMContentLoaded", function() {
-//     // Initialize EmailJS with your Public Key
-//     emailjs.init("Eh3ndhHDuFX9gVWo4");
+// ============ NAVIGATION HIGHLIGHTING ============
+window.addEventListener('scroll', () => {
+  const sections = document.querySelectorAll('section[id]');
+  const navLinkItems = document.querySelectorAll('.nav-links a');
   
-//     // Get the contact form element
-//     const contactForm = document.getElementById('contact-form');
+  let currentSection = '';
   
-//     // Only add the event listener if the contact form exists on the current page
-//     if (contactForm) {
-//       contactForm.addEventListener('submit', function(event) {
-//         event.preventDefault();
-      
-//         // Show loading indicator or disable submit button
-//         const submitButton = this.querySelector('button[type="submit"]');
-//         const originalButtonText = submitButton.innerHTML;
-//         submitButton.disabled = true;
-//         submitButton.innerHTML = 'Sending...';
-      
-//         // Send the form using EmailJS
-//         emailjs.sendForm('service_xdjbjj5', 'template_4gnpgpw', this)
-//           .then(function() {
-//             // Success message
-//             alert('Your message has been sent successfully!');
-//             contactForm.reset();
-          
-//             // Re-enable submit button
-//             submitButton.disabled = false;
-//             submitButton.innerHTML = originalButtonText;
-//           }, function(error) {
-//             // Error message
-//             console.error('EmailJS error:', error);
-//             alert('Sorry, there was an error sending your message. Please try again later.');
-          
-//             // Re-enable submit button
-//             submitButton.disabled = false;
-//             submitButton.innerHTML = originalButtonText;
-//           });
-//       });
-//     }
-// });
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    const sectionHeight = section.clientHeight;
+    
+    if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+      currentSection = section.getAttribute('id');
+    }
+  });
+  
+  navLinkItems.forEach(link => {
+    link.style.color = '';
+    const href = link.getAttribute('href');
+    
+    if (href === `#${currentSection}` && currentSection !== '') {
+      link.style.color = 'var(--accent-primary)';
+    }
+  });
+});
 
+// ============ HOVER EFFECTS ============
+const skillCards = document.querySelectorAll('.skill-card');
+const projectCards = document.querySelectorAll('.project-card');
 
+skillCards.forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    this.style.transform = 'translateY(-8px)';
+  });
+  
+  card.addEventListener('mouseleave', function() {
+    this.style.transform = 'translateY(0)';
+  });
+});
 
-// window.addEventListener("scroll", () => {
-//     // 🟢 Select all main sections and nav links
-//     const sections = document.querySelectorAll("section");
-//     const navLinks = document.querySelectorAll("nav a");
+projectCards.forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    this.style.transform = 'translateY(-12px)';
+  });
   
-//     let current = "";
+  card.addEventListener('mouseleave', function() {
+    this.style.transform = 'translateY(0)';
+  });
+});
+
+// ============ PAGE LOAD ANIMATION ============
+window.addEventListener('load', () => {
+  document.body.style.opacity = '1';
+});
+
+// ============ BACK TO TOP SMOOTH SCROLL ============
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+};
+
+// Allow clicking nav logo to go to top
+document.querySelector('.nav-logo')?.addEventListener('click', scrollToTop);
+
+// ============ TECH TAGS HOVER ============
+const techTags = document.querySelectorAll('.tech-tag');
+techTags.forEach(tag => {
+  tag.addEventListener('mouseenter', function() {
+    this.style.transform = 'scale(1.1)';
+  });
   
-//     // 🟢 Loop through sections to find the one currently in view
-//     sections.forEach(section => {
-//       const sectionTop = section.offsetTop - 60; // Adjust for navbar height
-//       if (pageYOffset >= sectionTop) {
-//         current = section.getAttribute("id"); // Store id of current section
-//       }
-//     });
-  
-//     // 🟢 Update nav link styling
-//     navLinks.forEach(link => {
-//       link.classList.remove("active"); // Remove 'active' class from all
-//       if (link.getAttribute("href").includes(current)) {
-//         link.classList.add("active"); // Highlight current section link
-//       }
-//     });
-//   });
+  tag.addEventListener('mouseleave', function() {
+    this.style.transform = 'scale(1)';
+  });
+});
+
+console.log('Benjamin Perkton Portfolio - Scripts loaded successfully!');
