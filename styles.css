@@ -3,6 +3,21 @@
    Contemporary Design System
    ============================================ */
 
+/* ============================================
+   COLOR SYSTEM & BRAND GUIDELINES
+   ============================================
+
+   Usage breakdown:
+   ─────────────────────────────────────────
+   PRIMARY   (10%) — High-impact brand elements,
+                     CTAs, links, accents
+   SECONDARY (25%) — Supporting UI, cards,
+                     borders, backgrounds
+   TERTIARY   (5%) — Status colors (split 4 ways)
+   NEUTRAL   (60%) — Text, backgrounds,
+                     structural foundation
+   ─────────────────────────────────────────   */
+
 * {
   margin: 0;
   padding: 0;
@@ -10,29 +25,157 @@
 }
 
 :root {
-  /* Colors */
-  --bg-primary: #0f172a;
-  --bg-secondary: #1a2847;
-  --bg-tertiary: #243150;
-  --accent-primary: #3b82f6;
-  --accent-secondary: #8b5cf6;
-  --accent-tertiary: #06b6d4;
-  --text-primary: #f8fafc;
-  --text-secondary: #cbd5e1;
-  --text-tertiary: #94a3b8;
-  --border-color: rgba(51, 65, 85, 0.5);
-  --glow: rgba(59, 130, 246, 0.2);
-  
-  /* Transitions & Timing */
-  --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ─────────────────────────────────────
+     PRIMARY COLOR SYSTEM (10% Usage)
+     Main brand color — CTAs, links, highlights
+     ───────────────────────────────────── */
+  --primary:          #3b82f6;   /* accent-primary — blue */
+  --primary-dark:     #1d4ed8;
+  --primary-light:    #93c5fd;
+  --primary-rgb:      59, 130, 246;
+
+  /* ─────────────────────────────────────
+     SECONDARY COLOR SYSTEM (25% Usage)
+     Supporting color — cards, backgrounds, UI
+     ───────────────────────────────────── */
+  --secondary:        #1a2847;   /* bg-secondary — dark navy */
+  --secondary-dark:   #0f172a;   /* bg-primary */
+  --secondary-light:  #243150;   /* bg-tertiary */
+  --secondary-rgb:    26, 40, 71;
+
+  /* ─────────────────────────────────────
+     TERTIARY COLOR 1 — ACCENT (1.25%)
+     Purple accent for secondary highlights
+     ───────────────────────────────────── */
+  --tertiary-1:       #8b5cf6;   /* accent-secondary */
+  --tertiary-1-dark:  #6d28d9;
+  --tertiary-1-light: #c4b5fd;
+  --tertiary-1-rgb:   139, 92, 246;
+
+  /* ─────────────────────────────────────
+     TERTIARY COLOR 2 — CYAN (1.25%)
+     Teal/cyan for subtitles and labels
+     ───────────────────────────────────── */
+  --tertiary-2:       #06b6d4;   /* accent-tertiary */
+  --tertiary-2-dark:  #0891b2;
+  --tertiary-2-light: #67e8f9;
+  --tertiary-2-rgb:   6, 182, 212;
+
+  /* ─────────────────────────────────────
+     TERTIARY COLOR 3 — DANGER (1.25%)
+     For errors, deletions, critical alerts
+     ───────────────────────────────────── */
+  --tertiary-3:       #ef4444;
+  --tertiary-3-dark:  #b91c1c;
+  --tertiary-3-light: #fca5a5;
+  --tertiary-3-rgb:   239, 68, 68;
+
+  /* ─────────────────────────────────────
+     TERTIARY COLOR 4 — SUCCESS (1.25%)
+     For success states, positive feedback
+     ───────────────────────────────────── */
+  --tertiary-4:       #22c55e;
+  --tertiary-4-dark:  #15803d;
+  --tertiary-4-light: #86efac;
+  --tertiary-4-rgb:   34, 197, 94;
+
+  /* ─────────────────────────────────────
+     NEUTRAL COLOR SYSTEM (60% Usage)
+     Foundation — text, backgrounds, structure
+     ───────────────────────────────────── */
+
+  /* Neutral 1 — Primary Text (15%) */
+  --neutral-1:        #f8fafc;   /* text-primary */
+  --neutral-1-rgb:    248, 250, 252;
+
+  /* Neutral 2 — Secondary Text (15%) */
+  --neutral-2:        #cbd5e1;   /* text-secondary */
+  --neutral-2-rgb:    203, 213, 225;
+
+  /* Neutral 3 — Muted/Tertiary Text (30%) */
+  --neutral-3:        #94a3b8;   /* text-tertiary */
+  --neutral-3-rgb:    148, 163, 184;
+
+  /* ─────────────────────────────────────
+     BACKGROUND SCALE
+     ───────────────────────────────────── */
+  --bg-primary:       #0f172a;
+  --bg-secondary:     #1a2847;
+  --bg-tertiary:      #243150;
+
+  /* Aliases mapped to brand system */
+  --accent-primary:   var(--primary);
+  --accent-secondary: var(--tertiary-1);
+  --accent-tertiary:  var(--tertiary-2);
+  --text-primary:     var(--neutral-1);
+  --text-secondary:   var(--neutral-2);
+  --text-tertiary:    var(--neutral-3);
+
+  /* ─────────────────────────────────────
+     UTILITY COLORS
+     ───────────────────────────────────── */
+  --white:            #ffffff;
+  --black:            #000000;
+  --border-color:     rgba(51, 65, 85, 0.5);
+  --glow:             rgba(59, 130, 246, 0.2);
+
+  /* ─────────────────────────────────────
+     BRAND IDENTITY
+     Logo: "BP" — DM Serif Display, gradient
+     Primary blue → purple gradient
+     Dark navy background theme
+     ───────────────────────────────────── */
+
+  /* ─────────────────────────────────────
+     GRADIENT SYSTEM
+     ───────────────────────────────────── */
+  --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  --gradient-brand:   linear-gradient(135deg, var(--primary) 0%, var(--tertiary-1) 100%);
+  --gradient-hero:    linear-gradient(135deg, var(--bg-primary) 0%, #111827 100%);
+  --gradient-card:    linear-gradient(135deg, rgba(26, 40, 71, 0.8), rgba(36, 49, 80, 0.6));
+
+  /* ─────────────────────────────────────
+     TYPOGRAPHY & SPACING
+     ───────────────────────────────────── */
+  --font-primary:     'Sora', sans-serif;
+  --font-mono:        'Space Mono', monospace;
+  --font-display:     'DM Serif Display', serif;
+
+  --spacing-xs:       0.25rem;
+  --spacing-sm:       0.5rem;
+  --spacing-md:       1rem;
+  --spacing-lg:       1.5rem;
+  --spacing-xl:       2rem;
+  --spacing-2xl:      3rem;
+
+  /* ─────────────────────────────────────
+     BORDER & RADIUS
+     ───────────────────────────────────── */
+  --radius-sm:        0.25rem;
+  --radius-md:        0.375rem;
+  --radius-lg:        0.5rem;
+  --radius-xl:        1rem;
+  --radius-2xl:       16px;
+  --radius-full:      50px;
+
+  /* ─────────────────────────────────────
+     TRANSITIONS
+     ───────────────────────────────────── */
+  --transition-fast:   150ms ease-in-out;
+  --transition-base:   all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-bounce: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
   --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  
-  /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.2);
-  --shadow-glow: 0 0 30px rgba(59, 130, 246, 0.15);
+
+  /* ─────────────────────────────────────
+     SHADOWS
+     ───────────────────────────────────── */
+  --shadow-sm:        0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-base:      0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-md:        0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg:        0 10px 15px rgba(0, 0, 0, 0.2);
+  --shadow-xl:        0 8px 24px rgba(0, 0, 0, 0.2);
+  --shadow-glow:      0 0 30px rgba(59, 130, 246, 0.15);
 }
 
 /* ============ ANIMATIONS ============ */
@@ -1453,5 +1596,147 @@ section {
 
   .highlights-list i {
     margin-top: 0;
+  }
+}
+/* ==========================================
+   UTILITY CLASSES
+   ========================================== */
+
+/* Display */
+.d-flex         { display: flex; }
+.d-block        { display: block; }
+.d-inline       { display: inline; }
+.d-inline-block { display: inline-block; }
+.d-none         { display: none !important; }
+
+/* Flexbox */
+.justify-content-between { justify-content: space-between; }
+.justify-content-center  { justify-content: center; }
+.justify-content-end     { justify-content: flex-end; }
+.align-items-center      { align-items: center; }
+.align-items-start       { align-items: flex-start; }
+.align-items-end         { align-items: flex-end; }
+.flex-fill               { flex: 1; }
+.flex-wrap               { flex-wrap: wrap; }
+
+/* Text */
+.text-center   { text-align: center; }
+.text-muted    { color: var(--neutral-3); }       /* 30% — muted text */
+.text-primary  { color: var(--primary); }          /* 10% — brand text */
+.text-danger   { color: var(--tertiary-3); }       /* 1.25% — error text */
+.text-success  { color: var(--tertiary-4); }       /* 1.25% — success text */
+
+/* Sizing */
+.w-100 { width: 100%; }
+.h-100 { height: 100%; }
+
+/* Margin */
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: var(--spacing-sm); }
+.mb-2 { margin-bottom: var(--spacing-md); }
+.mb-3 { margin-bottom: var(--spacing-lg); }
+.mb-4 { margin-bottom: var(--spacing-xl); }
+.mt-2 { margin-top: var(--spacing-md); }
+.mt-3 { margin-top: var(--spacing-lg); }
+.mt-4 { margin-top: var(--spacing-xl); }
+
+/* Padding */
+.p-1 { padding: var(--spacing-sm); }
+.p-2 { padding: var(--spacing-md); }
+.p-3 { padding: var(--spacing-lg); }
+.p-4 { padding: var(--spacing-xl); }
+.p-5 { padding: var(--spacing-2xl); }
+
+/* Opacity */
+.opacity-50 { opacity: 0.5; }
+.opacity-75 { opacity: 0.75; }
+
+/* Border */
+.border        { border: 1px solid var(--border-color); }
+.border-top    { border-top: 1px solid var(--border-color); }
+.border-2      { border-width: 2px; }
+.border-dashed { border-style: dashed; }
+.rounded       { border-radius: var(--radius-2xl); }
+
+/* Shadow */
+.shadow    { box-shadow: var(--shadow-base); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+
+/* Visually hidden (accessible) */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ==========================================
+   ACCESSIBILITY & MOTION
+   ========================================== */
+
+/* Focus styles — Primary (10%) */
+.btn:focus,
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Touch targets — minimum 44px for mobile */
+@media (hover: none) and (pointer: coarse) {
+  .btn {
+    min-height: 44px;
+    padding: 12px 16px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    min-height: 44px;
+  }
+
+  .nav-links a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  nav {
+    border-bottom: 2px solid var(--primary);
+  }
+
+  .skill-card,
+  .project-card,
+  .contact-card {
+    border: 2px solid var(--neutral-2);
+  }
+
+  .btn {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Reduced motion — respect user preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
   }
 }
