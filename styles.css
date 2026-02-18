@@ -241,18 +241,19 @@ nav {
     background: rgba(15, 23, 42, 0.98);
     border-bottom: 1px solid var(--border-color);
     flex-direction: column;
-    padding: 2rem;
+    padding: 0;
     gap: 1rem;
     text-align: center;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.3s ease, padding 0.3s ease;
     backdrop-filter: blur(10px);
     z-index: 999;
   }
 
   .nav-links.active {
     max-height: 500px;
+    padding: 2rem;
     overflow-y: auto;
   }
 
